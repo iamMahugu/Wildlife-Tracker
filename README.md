@@ -15,6 +15,7 @@ An app that aims at tracking the wildlife numbers. Rangers are able to spot anim
 - Spark
 - JUnit
 - Velocity Template Engine
+- PSQL
 
 ##### Setup
 

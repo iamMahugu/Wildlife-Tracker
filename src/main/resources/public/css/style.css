@@ -5,13 +5,28 @@ body {
     color: #333;
 }
 
-h1 {
-    font-size: 36px;
-    color: #636e7b;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Saira Extra Condensed',serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #343a40;
 }
 
-h3 {
-    font-size: 24px;
+.wildlife-intro h1 {
+    font-size: 10rem;
+}
+
+.wildlife-intro p {
+    font-size: 20px;
+}
+
+.pt100 {
+    padding-top: 100px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
 }
 
 .exist .heroes h3, .exist .squads h3 {

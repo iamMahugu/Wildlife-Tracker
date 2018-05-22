@@ -30,8 +30,7 @@ To use the code, you can clone the repository at: [https://github.com/YomZsamora
 * Run in psql: `CREATE DATABASE wildlife_tracker;`
 * Run in psql: `CREATE TABLE animals (id serial PRIMARY KEY, name varchar);`
 * Run in psql: `CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);`
-* Run in psql: `\c wildlife_tracker`
-* Finally check for tables in psql by running: `\dt`
+* Run in psql: `\connect wildlife_tracker`
 
 ## Further help
 

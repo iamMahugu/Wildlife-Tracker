@@ -1,0 +1,159 @@
+
+
+body {
+    font-family: 'latoregular', sans-serif !important;
+    color: #333;
+}
+
+h1 {
+    font-size: 36px;
+    color: #636e7b;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+.exist .heroes h3, .exist .squads h3 {
+    color: #1CAF9A;
+}
+
+.btn-default {
+    background: #e4e7ea;
+    color: #636e7b;
+    border-color: #ccc !important;
+}
+
+.btn {
+    display: inline-block;
+    padding: 9px 15px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: all 0.2s ease-out 0s;
+}
+
+.mb0 {
+    margin-bottom:0px;
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.mb15 {
+	margin-bottom: 15px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+label.error {
+    font-size: 11px;
+    color: red;
+}
+
+p.intro {
+    font-size: 16px;
+}
+p.label {
+    color:333 !important;
+}
+
+.btn-xs {
+    padding: 2px 10px;
+}
+
+.exist-link a {
+    font-size: 12px;
+    color: #1CAF9A;
+}
+
+.footer {
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+.footer p {
+    font-size: 11px;
+    margin-bottom: 0px;
+    padding: 5px 0px 5px 0px;
+}
+
+.panel-header {
+    color: #1CAF9A;
+    font-size: 12px;
+}
+
+.heroes ul, .squads ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.heroes ul li:first-child, .squads ul li:first-child {
+    border-top: 0;
+}
+.heroes ul li {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+}
+
+.squads ul li {
+    padding: 5px;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+}
+
+.heroes ul li small, .squads ul li small {
+    line-height: normal;
+}
+
+.heroes .hero-name, .squads .squad-name {
+    font-size: 13px;
+    color: #333;
+    margin: 0;
+    font-family: 'latobold';
+    line-height: normal;
+}
+
+.heroes ul li small, .squads ul li small {
+    line-height: normal;
+}
+
+.alert.alert-success {
+    font-size:20px;
+    text-align: center;
+}
+
+.squads a, .squad-display a {
+    color:#1CAF9A;
+}

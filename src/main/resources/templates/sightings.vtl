@@ -1,0 +1,111 @@
+
+	<div class="row">
+		<div class="col-md-4">
+			<div class="sightings">				
+				<div class="start pt50">
+					<h3>Add a Sighting</h3>	
+					<form action="/addStylist" method="post" name="addStylist">
+						<div class="form-group mb15">
+							<label class="label">Ranger's Name</label>
+							<input type="text" name="ranger_name" placeholder="Ranger's Name" class="form-control" />
+						</div>
+						<div class="form-group mb15">
+							<label class="label">Animal Name</label>
+							<input type="text" name="animal_name" placeholder="Animal Name" class="form-control" />
+						</div>
+						<div class="form-group mb15">
+							<label class="label">Endangered</label>
+							<div class="endangered-radio">
+								<div class="rdio rdio-success">
+									<input name="radio" value="4" id="radioSuccess" type="radio">
+									<label for="radioSuccess">No</label>
+								</div>
+								<div class="rdio rdio-danger">
+									<input name="radio" value="5" id="radioDanger" type="radio">
+									<label for="radioDanger">Yes</label>
+								</div>
+							</div>
+						</div>         
+						<div class="form-group mb15">
+							<label class="label">Location</label>
+							<select class="form-control" name="location">
+								<option label="- Choose Sighting Location -"></option>
+								<option value="Zone A">Zone A</option>
+								<option value="Zone B">Zone B</option>
+								<option value="Zone C">Zone C</option>
+								<option value="Zone D">Zone D</option>
+							</select>
+						</div>         
+						<div class="form-group mb15">
+							<label class="label">Animal Health</label>
+							<select class="form-control" name="animal_health">
+								<option label="- Animal's Health -"></option>
+								<option value="Ill">Ill</option>
+								<option value="Okay">Okay</option>
+								<option value="Healthy">Healthy</option>
+							</select>
+						</div>         
+						<div class="form-group mb15">
+							<label class="label">Animal Age</label>
+							<select class="form-control" name="animal_age">
+								<option label="- Animal's Age -"></option>
+								<option value="Newborn">Newborn</option>
+								<option value="Young">Young</option>
+								<option value="Adult">Adult</option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-success btn-xs"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add New Sighting</button>
+						<button type="reset" class="btn btn-default btn-xs"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;&nbsp;Cancel</button>		
+					</form>				
+				</div>
+			</div>			
+		</div>
+		<div class="col-md-8 pt50">
+			<h3>Sightings</h3>	
+			<div class="table-responsive">
+				<div class="table-responsive">
+					<table class="table mb30">
+						<thead>
+							<tr>
+								<th>Ranger Name:</th>
+								<th>Animal Name:</th>
+								<th>Endangered?</th>
+								<th>Location:</th>
+								<th>Animal Health:</th>
+								<th>Animal Age:</th>
+								<th>Time Stamp:</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Timothy Muli</td>
+								<td>White Rhino</td>
+								<td><span class="label label-danger">YES</span></td>
+								<td>Zone B</td>
+								<td><span class="label label-warning">Okay</span></td>
+								<td>Adult</td>
+								<td>May 12, 2018</td>
+							</tr>
+							<tr>
+								<td>Peter Myakangi</td>
+								<td>Spotted Owl</td>
+								<td><span class="label label-success">NO</span></td>
+								<td>Zone B</td>
+								<td><span class="label label-danger">Ill</span></td>
+								<td>New Born</td>
+								<td>May 12, 2018</td>
+							</tr>
+							<tr>
+								<td>Osman Dembele</td>
+								<td>Jaguar</td>
+								<td><span class="label label-danger">YES</span></td>
+								<td>Zone B</td>
+								<td><span class="label label-success">Healthy</span></td>
+								<td>Young</td>
+								<td>May 12, 2018</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+		</div>
+	</div>

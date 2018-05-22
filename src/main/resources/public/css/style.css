@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Saira Extra Condensed',serif;
     font-weight: 700;
     text-transform: uppercase;
-    color: #343a40;
+    color: #1CAF9A;
 }
 
 .wildlife-intro h1 {
@@ -20,8 +20,24 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 20px;
 }
 
+.sightings p {
+    font-size: 30px;
+}
+
+.home-link a {
+    font-size: 10px;
+}
+
+.pt50 {
+    padding-top: 50px;
+}
+
 .pt100 {
     padding-top: 100px;
+}
+
+.table-responsive .label {
+    color: #ffffff !important;
 }
 
 .btn-block {

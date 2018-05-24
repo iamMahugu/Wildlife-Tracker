@@ -87,10 +87,26 @@
 								#else
 								<td></td>
 								#end
+								#if ($AnimalClass.getAnimalEndangered($sighting.getAnimalId()))
+									#if ($AnimalClass.getAnimalEndangered($sighting.getAnimalId()) == "no")
+										<td><span class="label label-success uppercase">$AnimalClass.getAnimalEndangered($sighting.getAnimalId())</span></td>
+									#else 
+										<td><span class="label label-danger uppercase">$AnimalClass.getAnimalEndangered($sighting.getAnimalId())</span></td>
+									#end
+								#else
+								<td></td>
+								#end
 								<td>$sighting.getLocation()</td>
-								<td>Zone B</td>
-								<td><span class="label label-warning">Okay</span></td>
-								<td>Adult</td>
+								#if ($AnimalClass.getAnimalHealth($sighting.getAnimalId()))
+								<td>$AnimalClass.getAnimalHealth($sighting.getAnimalId())</td>
+								#else
+								<td><span class="label label-warning">Not Endangered</span></td>
+								#end
+								#if ($AnimalClass.getAnimalAge($sighting.getAnimalId()))
+								<td>$AnimalClass.getAnimalAge($sighting.getAnimalId())</td>
+								#else
+								<td><span class="label label-warning">Not Endangered</span></td>
+								#end
 								<td>$sighting.getTimestamp()</td>
 							</tr>
 							#end

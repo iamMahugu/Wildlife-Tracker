@@ -106,7 +106,7 @@ public class Animal {
 
    public static String getAnimalHealth(int id) {
       try(Connection con = DB.sql2o.open()) {
-         String sql = "SELECT health FROM animals WHERE id = :id;";
+         String sql = "SELECT animal_health FROM animals WHERE id = :id;";
          String name = con.createQuery(sql)
          .addParameter("id", id)
          .executeScalar(String.class);
@@ -116,7 +116,7 @@ public class Animal {
 
    public static String getAnimalAge(int id) {
       try(Connection con = DB.sql2o.open()) {
-         String sql = "SELECT age FROM animals WHERE id = :id;";
+         String sql = "SELECT animal_age FROM animals WHERE id = :id;";
          String name = con.createQuery(sql)
          .addParameter("id", id)
          .executeScalar(String.class);

@@ -28,7 +28,7 @@ public class App {
       get("/sightings", (request, response) -> {
          Map<String, Object> model = new HashMap<String, Object>();
 
-         
+
          model.put("template", "templates/sightings.vtl");
          return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
@@ -47,17 +47,38 @@ public class App {
 
          if (endangered.equals("yes")) {
             if(newAnimal.checkEndangered(endangered, animal_health, animal_age)) {
-               
-               // newAnimal.setEndangered(endangered, health, age);
-               // Sighting newSighting = new Sighting(ranger_name, location, newAnimal.getId());
-               // newSighting.save();
+               newAnimal.save();
+               newAnimal.setAsEndangered(endangered, animal_health, animal_age);
+               Sighting newSighting = new Sighting(ranger_name, location, newAnimal.getId());
+               newSighting.save();
             } else {
-               response.redirect("/failure2");
+               response.redirect("/endangeredNotAdded");
+            }
+         } else if (endangered.equals("no")) {
+            if(newAnimal.checkInput(animal_name,)) {
+            newAnimal.save();
+            Sighting newSighting = new Sighting(ranger_name, location, newAnimal.getId());
+            newSighting.save();
+            } else {
+               response.redirect("/noAnimalName");
             }
          }
+         response.redirect("/");
          return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
 
+      get("/endangeredNotAdded", (request, response) -> {
+         Map<String, Object> model = new HashMap<String, Object>();
+         model.put("template", "templates/endangeredNotAdded.vtl");
+         return new ModelAndView(model, layout);
+      }, new VelocityTemplateEngine());
+
+
+      get("/noAnimalName", (request, response) -> {
+         Map<String, Object> model = new HashMap<String, Object>();
+         model.put("template", "templates/noAnimalName.vtl");
+         return new ModelAndView(model, layout);
+      }, new VelocityTemplateEngine());
     	
   	}
 }

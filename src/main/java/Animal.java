@@ -24,15 +24,15 @@ public class Animal {
    }
 
    public boolean checkEndangered(String endangered, String health, String age) {
-      try {
-         this.save(endangered, health, age);
+      if (endangered.equals("") || health.equals("") || age.equals("")) {
+         throw new IllegalArgumentException("Please enter details for endangered animal.");
+      }
+      else {
          return true;
-      } catch (IllegalArgumentException exception) {
-         return false;
       }
    }
 
-   public void save(String endangered, String animal_name, String animal_age) {
+   public void save() {
       try(Connection con = DB.sql2o.open()) {
          String sql = "INSERT INTO animals (animal_name, endangered) VALUES (:animal_name, :endangered)";
          this.id = (int) con.createQuery(sql, true)
@@ -44,15 +44,93 @@ public class Animal {
       }
    }
 
-   // public void animalIsEndangered(String endangered, String health, String age) {
-   //    try(Connection con = DB.sql2o.open()) {
-   //       String sql = "UPDATE animals SET endangered = :endangered, animal_health = :animal_health, animal_age = :animal_age WHERE id = :id";
-   //       con.createQuery(sql)
-   //      .addParameter("endangered", endangered)
-   //      .addParameter("health", health)
-   //      .addParameter("age", age)
-   //      .addParameter("id", id)
-   //      .executeUpdate();
-   //    }
-   // }
+   public void setAsEndangered(String endangered, String animal_health, String animal_age) {
+      try(Connection con = DB.sql2o.open()) {
+         String sql = "UPDATE animals SET endangered = :endangered, animal_health = :animal_health, animal_age = :animal_age WHERE id = :id";
+         con.createQuery(sql)
+         .addParameter("endangered", endangered)
+         .addParameter("animal_health", animal_health)
+         .addParameter("animal_age", animal_age)
+         .addParameter("id", id)
+         .executeUpdate();
+      }
+   }
+
+   public boolean checkInput(String animal_name) {
+      if (animal_name.equals("")) {
+         throw new IllegalArgumentException("Please enter animal name.");
+      }
+      else {
+         return true;
+      }
+   }
+
+   public static List<Animal> all() {
+      String sql = "select * from animals";
+      try(Connection con = DB.sql2o.open()) {
+         return con.createQuery(sql)
+         .throwOnMappingFailure(false)
+         .executeAndFetch(Animal.class);
+      }
+   }
+
+   public static Animal find(int id) {
+      try(Connection con = DB.sql2o.open()) {
+         String sql = "SELECT * FROM animals WHERE id=:id";
+         Animal blog = con.createQuery(sql)
+         .addParameter("id", id)
+         .executeAndFetchFirst(Animal.class);
+         return blog;
+      }
+   }
+
+   public static String getAnimalName(int id) {
+      try(Connection con = DB.sql2o.open()) {
+         String sql = "SELECT name FROM animals WHERE id = :id;";
+         String name = con.createQuery(sql)
+         .addParameter("id", id)
+         .executeScalar(String.class);
+         return name;
+      }
+   }
+
+   public static String getAnimalEndangered(int id) {
+      try(Connection con = DB.sql2o.open()) {
+         String sql = "SELECT endangered FROM animals WHERE id = :id;";
+         String name = con.createQuery(sql)
+         .addParameter("id", id)
+         .executeScalar(String.class);
+         return name;
+      }
+   }
+
+   public static String getAnimalHealth(int id) {
+      try(Connection con = DB.sql2o.open()) {
+         String sql = "SELECT health FROM animals WHERE id = :id;";
+         String name = con.createQuery(sql)
+         .addParameter("id", id)
+         .executeScalar(String.class);
+         return name;
+      }
+   }
+
+   public static String getAnimalAge(int id) {
+      try(Connection con = DB.sql2o.open()) {
+         String sql = "SELECT age FROM animals WHERE id = :id;";
+         String name = con.createQuery(sql)
+         .addParameter("id", id)
+         .executeScalar(String.class);
+         return name;
+      }
+   }
+
+   @Override
+   public boolean equals(Object otherAnimal) {
+      if (!(otherAnimal instanceof Animal)) {
+         return false;
+      } else {
+         Animal newAnimal = (Animal) otherAnimal;
+         return this.getName().equals(newAnimal.getName());
+      }
+   }
 }

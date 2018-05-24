@@ -76,6 +76,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.2s ease-out 0s;
 }
 
+input#yes, input#no {
+    cursor: pointer;
+}
+
 .mb0 {
     margin-bottom:0px;
 }

@@ -17,5 +17,19 @@
     <footer class="footer"><p>&copy; 2018 All Rights Reserved. Moringa School, Wildlife Tracker Project. Developed by Yommie Samora.</p></footer>
 
 <script src="/js/jquery-1.11.1.min.js"></script>
+<script>
+    jQuery(document).ready(function() {
+    
+    "use strict";
+
+    $('.endangered-details').hide();
+  
+    jQuery('input#yes').click(function(){
+        $('.endangered-details').show();
+    });
+    jQuery('input#no').click(function(){
+        $('.endangered-details').hide();
+     });});
+</script>
 </body>
 </html>

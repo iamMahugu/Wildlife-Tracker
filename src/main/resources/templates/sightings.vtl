@@ -97,9 +97,17 @@
 								<td></td>
 								#end
 								<td>$sighting.getLocation()</td>
+
 								#if ($AnimalClass.getAnimalHealth($sighting.getAnimalId()))
-								<td>$AnimalClass.getAnimalHealth($sighting.getAnimalId())</td>
+									#if ($AnimalClass.getAnimalHealth($sighting.getAnimalId()) == "healthy")
+										<td><span class="label label-success uppercase">$AnimalClass.getAnimalHealth($sighting.getAnimalId())</span></td>
+									#else if ($AnimalClass.getAnimalHealth($sighting.getAnimalId()) == "okay")
+										<td><span class="label label-warning uppercase">$AnimalClass.getAnimalHealth($sighting.getAnimalId())</span></td>
+									#else 
+										<td><span class="label label-danger uppercase">$AnimalClass.getAnimalHealth($sighting.getAnimalId())</span></td>
+									#end
 								#else
+
 								<td><span class="label label-warning">Not Endangered</span></td>
 								#end
 								#if ($AnimalClass.getAnimalAge($sighting.getAnimalId()))

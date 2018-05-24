@@ -79,33 +79,17 @@
 							</tr>
 						</thead>
 						<tbody>
+							#foreach ($sighting in $sightings)
 							<tr>
-								<td>Timothy Muli</td>
-								<td>White Rhino</td>
+								<td>$sighting.getRangerName()</td>
+								<td>$sighting.getLocation()</td>
 								<td><span class="label label-danger">YES</span></td>
 								<td>Zone B</td>
 								<td><span class="label label-warning">Okay</span></td>
 								<td>Adult</td>
 								<td>May 12, 2018</td>
 							</tr>
-							<tr>
-								<td>Peter Myakangi</td>
-								<td>Spotted Owl</td>
-								<td><span class="label label-success">NO</span></td>
-								<td>Zone B</td>
-								<td><span class="label label-danger">Ill</span></td>
-								<td>New Born</td>
-								<td>May 12, 2018</td>
-							</tr>
-							<tr>
-								<td>Osman Dembele</td>
-								<td>Jaguar</td>
-								<td><span class="label label-danger">YES</span></td>
-								<td>Zone B</td>
-								<td><span class="label label-success">Healthy</span></td>
-								<td>Young</td>
-								<td>May 12, 2018</td>
-							</tr>
+							#end
 						</tbody>
 					</table>
 				</div>

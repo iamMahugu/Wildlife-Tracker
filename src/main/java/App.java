@@ -56,7 +56,7 @@ public class App {
                response.redirect("/endangeredNotAdded");
             }
          } else if (endangered.equals("no")) {
-            if(newAnimal.checkInput(animal_name,)) {
+            if(newAnimal.checkInput(animal_name)) {
             newAnimal.save();
             Sighting newSighting = new Sighting(ranger_name, location, newAnimal.getId());
             newSighting.save();

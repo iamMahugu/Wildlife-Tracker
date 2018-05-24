@@ -63,7 +63,7 @@ public class App {
                response.redirect("/noAnimalName");
             }
          }
-         response.redirect("/");
+         
          return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
 

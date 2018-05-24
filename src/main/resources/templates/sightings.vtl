@@ -82,8 +82,12 @@
 							#foreach ($sighting in $sightings)
 							<tr>
 								<td>$sighting.getRangerName()</td>
+								#if ($AnimalClass.getAnimalName($sighting.getAnimalId()))
+								<td>$AnimalClass.getAnimalName($sighting.getAnimalId())</td>
+								#else
+								<td></td>
+								#end
 								<td>$sighting.getLocation()</td>
-								<td><span class="label label-danger">YES</span></td>
 								<td>Zone B</td>
 								<td><span class="label label-warning">Okay</span></td>
 								<td>Adult</td>

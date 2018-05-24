@@ -89,8 +89,7 @@ public class Animal {
          String sql = "SELECT name FROM animals WHERE id = :id;";
          String name = con.createQuery(sql)
          .addParameter("id", id)
-         .executeScalar(String.class);
-         return name;
+         .executeAndFetch(String.class);
       }
    }
 
@@ -99,8 +98,7 @@ public class Animal {
          String sql = "SELECT endangered FROM animals WHERE id = :id;";
          String name = con.createQuery(sql)
          .addParameter("id", id)
-         .executeScalar(String.class);
-         return name;
+         .executeAndFetch(String.class);
       }
    }
 
@@ -109,8 +107,7 @@ public class Animal {
          String sql = "SELECT health FROM animals WHERE id = :id;";
          String name = con.createQuery(sql)
          .addParameter("id", id)
-         .executeScalar(String.class);
-         return name;
+         .executeAndFetch(String.class);
       }
    }
 
@@ -119,8 +116,7 @@ public class Animal {
          String sql = "SELECT age FROM animals WHERE id = :id;";
          String name = con.createQuery(sql)
          .addParameter("id", id)
-         .executeScalar(String.class);
-         return name;
+         .executeAndFetch(String.class);
       }
    }
 

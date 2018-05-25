@@ -101,7 +101,7 @@
 								#if ($AnimalClass.getAnimalHealth($sighting.getAnimalId()))
 									#if ($AnimalClass.getAnimalHealth($sighting.getAnimalId()) == "healthy")
 										<td><span class="label label-success uppercase">$AnimalClass.getAnimalHealth($sighting.getAnimalId())</span></td>
-									#else if ($AnimalClass.getAnimalHealth($sighting.getAnimalId()) == "okay")
+									#elseif ($AnimalClass.getAnimalHealth($sighting.getAnimalId()) == "okay")
 										<td><span class="label label-warning uppercase">$AnimalClass.getAnimalHealth($sighting.getAnimalId())</span></td>
 									#else 
 										<td><span class="label label-danger uppercase">$AnimalClass.getAnimalHealth($sighting.getAnimalId())</span></td>
@@ -111,7 +111,7 @@
 								<td><span class="label label-warning">Not Endangered</span></td>
 								#end
 								#if ($AnimalClass.getAnimalAge($sighting.getAnimalId()))
-								<td>$AnimalClass.getAnimalAge($sighting.getAnimalId())</td>
+								<td><span class="label label-success uppercase">$AnimalClass.getAnimalAge($sighting.getAnimalId())</span></td>
 								#else
 								<td><span class="label label-warning">Not Endangered</span></td>
 								#end

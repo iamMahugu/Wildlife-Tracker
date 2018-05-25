@@ -63,7 +63,9 @@ public class App {
                response.redirect("/noAnimalName");
             }
          }
-
+         model.put("sightings", Sighting.all());
+         model.put("animals", Animal.all());
+         model.put("AnimalClass", Animal.class);
          model.put("template", "templates/sightings.vtl");
          return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());

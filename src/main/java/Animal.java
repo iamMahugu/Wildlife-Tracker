@@ -23,9 +23,14 @@ public class Animal {
       return id;
    }
 
-   public boolean checkEndangered(String endangered, String health, String age) {
-      if (endangered.equals("") || health.equals("") || age.equals("")) {
-         throw new IllegalArgumentException("Please enter details for endangered animal.");
+   public boolean checkEndangered(String endangered, String animal_health, String animal_age) {
+      if ((!animal_health.equals(EndangeredAnimal.ILL)
+      && !animal_health.equals(EndangeredAnimal.OKAY)
+      && !animal_health.equals(EndangeredAnimal.HEALTHY))
+      || (!animal_age.equals(EndangeredAnimal.NEWBORN)
+      && !animal_age.equals(EndangeredAnimal.YOUNG)
+      && !animal_age.equals(EndangeredAnimal.ADULT))) {
+         throw new IllegalArgumentException("Please enter correct details for endangered animal.");
       }
       else {
          return true;

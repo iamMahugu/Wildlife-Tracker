@@ -44,7 +44,6 @@ public class App {
          String animal_health = request.queryParams("animal_health");
          String animal_age = request.queryParams("animal_age");
          Animal newAnimal = new Animal(animal_name, endangered);
-         model.put("template", "templates/sightings.vtl");
 
          if (endangered.equals("yes")) {
             if(newAnimal.checkEndangered(endangered, animal_health, animal_age)) {
@@ -65,6 +64,7 @@ public class App {
             }
          }
 
+         model.put("template", "templates/sightings.vtl");
          return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
 

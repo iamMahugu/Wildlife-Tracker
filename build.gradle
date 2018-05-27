@@ -8,11 +8,11 @@ applicationName = "wildlife-tracker"
 mainClassName = "App"
 
 jacocoTestReport{
-    reports {
-            xml.enabled false
-            csv.enabled false
-            html.destination "${buildDir}/jacocoHtml"
-    }
+  reports {
+    xml.enabled false
+    csv.enabled false
+    html.destination "${buildDir}/jacocoHtml"
+  }
 }
 
 repositories {

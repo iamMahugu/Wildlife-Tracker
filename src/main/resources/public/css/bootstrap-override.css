@@ -199,7 +199,7 @@ h4, .h4 {
 }
 
 .btn-success {
-   background-color: #1CAF9A;
+   background-color: #192800;
    border-color: #17a08c;
 }
 
@@ -207,8 +207,8 @@ h4, .h4 {
 .btn-success:active,
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
-   background-color: #17a08c;
-   border-color: #119380;
+   background-color: #192800;
+   border-color: #192800;
 }
 
 .btn-white {
